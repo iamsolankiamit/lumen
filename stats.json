@@ -9,16 +9,24 @@
       "component---src-templates-page-template-jsx-ef150ef5bc28b140dfe9.js.map"
     ],
     "path---categories": [
-      "path---categories-6d4d67d9db4e77889359.js",
-      "path---categories-6d4d67d9db4e77889359.js.map"
+      "path---categories-9af07bed6bff8eaa536c.js",
+      "path---categories-9af07bed6bff8eaa536c.js.map"
     ],
     "component---src-pages-tags-jsx": [
       "component---src-pages-tags-jsx-e787e63a56bf6859a224.js",
       "component---src-pages-tags-jsx-e787e63a56bf6859a224.js.map"
     ],
+    "path---categories-postgre-sql": [
+      "path---categories-postgre-sql-3be58a7dc255fc0fb8fe.js",
+      "path---categories-postgre-sql-3be58a7dc255fc0fb8fe.js.map"
+    ],
+    "path---tags-database": [
+      "path---tags-database-285feb48bbacf2138ca9.js",
+      "path---tags-database-285feb48bbacf2138ca9.js.map"
+    ],
     "path---tags": [
-      "path---tags-c31abbd6060e865da6ad.js",
-      "path---tags-c31abbd6060e865da6ad.js.map"
+      "path---tags-f23099917282730e8c3a.js",
+      "path---tags-f23099917282730e8c3a.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
@@ -29,8 +37,8 @@
       "path---tags-javascript-9c2bedbcd1cdb83c6b15.js.map"
     ],
     "component---src-layouts-index-jsx": [
-      "component---src-layouts-index-jsx-30239e7b040f7b5899f3.js",
-      "component---src-layouts-index-jsx-30239e7b040f7b5899f3.js.map"
+      "component---src-layouts-index-jsx-7d32ae8af6d13215268d.js",
+      "component---src-layouts-index-jsx-7d32ae8af6d13215268d.js.map"
     ],
     "component---src-templates-category-template-jsx": [
       "component---src-templates-category-template-jsx-801615e0ee15486d4622.js",
@@ -57,8 +65,8 @@
       "component---src-pages-categories-jsx-2da18a892adca87ae12e.js.map"
     ],
     "path---index": [
-      "path---index-eb6b995f9e60862a0b57.js",
-      "path---index-eb6b995f9e60862a0b57.js.map"
+      "path---index-a5ac758b75d96d9d1c73.js",
+      "path---index-a5ac758b75d96d9d1c73.js.map"
     ],
     "commons": [
       "commons-5a4b1cc02814252034ab.js",
@@ -75,8 +83,12 @@
       "component---src-pages-404-jsx-265d0c38bdff4d0a90c6.js.map"
     ],
     "path---contact": [
-      "path---contact-284cd64d09428b66c4f7.js",
-      "path---contact-284cd64d09428b66c4f7.js.map"
+      "path---contact-94cb7998cbb568a2a9b8.js",
+      "path---contact-94cb7998cbb568a2a9b8.js.map"
+    ],
+    "path---tags-postgre-sql": [
+      "path---tags-postgre-sql-d467ac5825e4a53ce4cf.js",
+      "path---tags-postgre-sql-d467ac5825e4a53ce4cf.js.map"
     ],
     "path---offline-plugin-app-shell-fallback": [
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
@@ -87,24 +99,28 @@
       "component---src-pages-index-jsx-64649fde84da96ead11c.js.map"
     ],
     "app": [
-      "app-964b5c052d776492f145.js",
-      "app-964b5c052d776492f145.js.map"
+      "app-7b4b67ceb2c4818d8cb1.js",
+      "app-7b4b67ceb2c4818d8cb1.js.map"
     ],
     "path---tags-web-development": [
-      "path---tags-web-development-1ce2f43f872a97f48261.js",
-      "path---tags-web-development-1ce2f43f872a97f48261.js.map"
+      "path---tags-web-development-7941d4f705500d6f79a6.js",
+      "path---tags-web-development-7941d4f705500d6f79a6.js.map"
     ],
     "path---404": [
       "path---404-9d60bd2029efd7f1b6c1.js",
       "path---404-9d60bd2029efd7f1b6c1.js.map"
     ],
+    "path---posts-how-to-setup-postgre-sql-on-mac-os": [
+      "path---posts-how-to-setup-postgre-sql-on-mac-os-36eaddd83177c4012dc2.js",
+      "path---posts-how-to-setup-postgre-sql-on-mac-os-36eaddd83177c4012dc2.js.map"
+    ],
     "path---posts-10-console-tricks-to-debug-like-a-pro": [
-      "path---posts-10-console-tricks-to-debug-like-a-pro-18b0a1fa84ecb312684b.js",
-      "path---posts-10-console-tricks-to-debug-like-a-pro-18b0a1fa84ecb312684b.js.map"
+      "path---posts-10-console-tricks-to-debug-like-a-pro-aa6726513ec7d4fe6117.js",
+      "path---posts-10-console-tricks-to-debug-like-a-pro-aa6726513ec7d4fe6117.js.map"
     ],
     "path---about": [
-      "path---about-32db9f0dc41a30bfc49c.js",
-      "path---about-32db9f0dc41a30bfc49c.js.map"
+      "path---about-29f0a8b84d9d7b31d9d3.js",
+      "path---about-29f0a8b84d9d7b31d9d3.js.map"
     ]
   }
 }

@@ -1,4 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Amit Solanki]]></title><description><![CDATA[I develop in and write about Javascript, Reason, and React]]></description><link>http://solankiamit.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 03 Nov 2018 12:38:58 GMT</lastBuildDate><item><title><![CDATA[10 Console tricks, to debug like a Pro.]]></title><description><![CDATA[Some built-in console methods, which can make debugging fun ;)]]></description><link>http://solankiamit.com/posts/10-Console-tricks-to-debug-like-a-pro/</link><guid isPermaLink="false">http://solankiamit.com/posts/10-Console-tricks-to-debug-like-a-pro/</guid><pubDate>Sat, 13 Oct 2018 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;/cover-3b14fb52323086494a13c77c485ca8ee.gif&quot; alt=&quot;Console Javascript&quot;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Amit Solanki]]></title><description><![CDATA[I develop in and write about Javascript, Reason, and React]]></description><link>http://solankiamit.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 13 Jul 2019 18:38:44 GMT</lastBuildDate><item><title><![CDATA[How to setup PostgreSQL on MacOS]]></title><description><![CDATA[PostgreSQL setup reference]]></description><link>http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</link><guid isPermaLink="false">http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</guid><pubDate>Sun, 13 Jan 2019 23:35:19 GMT</pubDate><content:encoded>&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/postgresql-907792a9fb57d6e99da3ebd881352848-cfd19.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 960px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 32.785714285714285%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQC/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABowEIP//EABkQAQACAwAAAAAAAAAAAAAAAAIBAwAEEf/aAAgBAQABBQIq8lzc8nXff//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAARAQIyQmH/2gAIAQEABj8C1t0TRlB//8QAGBAAAwEBAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8hl45Lp6zRpauFYP/aAAwDAQACAAMAAAAQ8A//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAABBQEAAAAAAAAAAAAAAAABABEhQWFR/9oACAEBAAE/EK5gaZGkTxuyOOgLEvIK/9k=&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;PostgreSQL&quot;
+        title=&quot;&quot;
+        src=&quot;/static/postgresql-907792a9fb57d6e99da3ebd881352848-d564d.jpg&quot;
+        srcset=&quot;/static/postgresql-907792a9fb57d6e99da3ebd881352848-865fd.jpg 240w,
+/static/postgresql-907792a9fb57d6e99da3ebd881352848-d40a0.jpg 480w,
+/static/postgresql-907792a9fb57d6e99da3ebd881352848-d564d.jpg 960w,
+/static/postgresql-907792a9fb57d6e99da3ebd881352848-cfd19.jpg 1400w&quot;
+        sizes=&quot;(max-width: 960px) 100vw, 960px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;I would be lying, if I say I don’t look up how to setup PostgreSQL - every DAMN time. We know it was hard to do before, but now it isn’t, yet most of the guides we find are outdated. So, here we have an updated version of it.&lt;/p&gt;
+&lt;h3&gt;Installing PostgreSQL&lt;/h3&gt;
+&lt;p&gt;First, install &lt;a href=&quot;https://brew.sh&quot;&gt;HomeBrew&lt;/a&gt; if you don’t have it already, you can use the following script to install it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;/usr/bin/ruby -e &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Once you are done with it, update HomeBrew dependencies and install PostgreSQL.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew update
+brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; postgresql&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;See, I told you it was Easy. Let’s check Postgres version&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;postgres --version
+postgres &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;PostgreSQL&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; 11.3&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Initializing the DB&lt;/h3&gt;
+&lt;p&gt;A Database needs some space allocated on your hard-disk, also called as “cluster” or “Data directory”. It happens automatically, but to be sure run the following&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;initdb /usr/local/var/postgres&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;You may see the error message: &lt;code class=&quot;language-text&quot;&gt;initdb: directory “/usr/local/var/postgres” exists but is not empty&lt;/code&gt; if the database was already created when we installed PostgreSQL.&lt;/p&gt;
+&lt;h3&gt;Start/Stop PostgreSQL&lt;/h3&gt;
+&lt;p&gt;You can do it either ways, by directly calling the following&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;pg_ctl -D /usr/local/var/postgres start
+pg_ctl -D /usr/local/var/postgres stop&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;or by using brew&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew services postgres start
+brew services postgres stop
+brew services postgres restart&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Creating a PostgreSQL Database&lt;/h3&gt;
+&lt;p&gt;To create a database run the following&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;createdb databasename&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;To remove a database run the following&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;dropdb databasename&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;To Connect to a database run&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;psql databasename&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;This will open up the psql sheel, where you can run SQL quries, to exit press &lt;em&gt;&lt;kbd&gt;ctrl+d&lt;/kbd&gt;&lt;/em&gt;. Some useful commands, to know.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;\list&lt;/code&gt; To list all databases.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;\c databaseName&lt;/code&gt; to connect to &lt;code class=&quot;language-text&quot;&gt;databaseName&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;\d&lt;/code&gt; To list relations in current database.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;\d tableName&lt;/code&gt; To list info of a table.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[10 Console tricks, to debug like a Pro.]]></title><description><![CDATA[Some built-in console methods, which can make debugging fun ;)]]></description><link>http://solankiamit.com/posts/10-Console-tricks-to-debug-like-a-pro/</link><guid isPermaLink="false">http://solankiamit.com/posts/10-Console-tricks-to-debug-like-a-pro/</guid><pubDate>Sat, 13 Oct 2018 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;/cover-3b14fb52323086494a13c77c485ca8ee.gif&quot; alt=&quot;Console Javascript&quot;&gt;&lt;/p&gt;
 &lt;p&gt;Okay, I know it’s kinda like a click-bait title, but trust me you’ll be surprised by what console can do. let’s start with some basic ones.&lt;/p&gt;
 &lt;h3&gt;1. console.group(‘name’) and console.groupEnd(‘name’)&lt;/h3&gt;
 &lt;p&gt;As the name suggests it will group multiple logs in one single expandable group, you can even nest them if you’d like to further group them. &lt;code class=&quot;language-text&quot;&gt;console.group(‘groupName’)&lt;/code&gt; starts the group and &lt;code class=&quot;language-text&quot;&gt;console.groupEnd(‘groupName’)&lt;/code&gt; closes a group. There is a third function &lt;code class=&quot;language-text&quot;&gt;console.groupCollapsed&lt;/code&gt; which creates the group in collapsed mode.&lt;/p&gt;
