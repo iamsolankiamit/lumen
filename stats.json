@@ -9,8 +9,16 @@
       "component---src-templates-page-template-jsx-ef150ef5bc28b140dfe9.js.map"
     ],
     "path---categories": [
-      "path---categories-9af07bed6bff8eaa536c.js",
-      "path---categories-9af07bed6bff8eaa536c.js.map"
+      "path---categories-db9c2bb6aee3a41aa7b5.js",
+      "path---categories-db9c2bb6aee3a41aa7b5.js.map"
+    ],
+    "path---categories-ruby-on-rails": [
+      "path---categories-ruby-on-rails-a596f1f465f72d096a42.js",
+      "path---categories-ruby-on-rails-a596f1f465f72d096a42.js.map"
+    ],
+    "path---tags-ruby-on-rails": [
+      "path---tags-ruby-on-rails-ae6b07ff076b1a08ae04.js",
+      "path---tags-ruby-on-rails-ae6b07ff076b1a08ae04.js.map"
     ],
     "component---src-pages-tags-jsx": [
       "component---src-pages-tags-jsx-e787e63a56bf6859a224.js",
@@ -25,16 +33,20 @@
       "path---tags-database-285feb48bbacf2138ca9.js.map"
     ],
     "path---tags": [
-      "path---tags-f23099917282730e8c3a.js",
-      "path---tags-f23099917282730e8c3a.js.map"
+      "path---tags-cea2f777aa137582b235.js",
+      "path---tags-cea2f777aa137582b235.js.map"
     ],
     "path---": [
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
     "path---tags-javascript": [
-      "path---tags-javascript-9c2bedbcd1cdb83c6b15.js",
-      "path---tags-javascript-9c2bedbcd1cdb83c6b15.js.map"
+      "path---tags-javascript-0f0c18211710d6b77ff3.js",
+      "path---tags-javascript-0f0c18211710d6b77ff3.js.map"
+    ],
+    "path---tags-cors": [
+      "path---tags-cors-84682d36182d58f4bb2c.js",
+      "path---tags-cors-84682d36182d58f4bb2c.js.map"
     ],
     "component---src-layouts-index-jsx": [
       "component---src-layouts-index-jsx-7d32ae8af6d13215268d.js",
@@ -52,6 +64,10 @@
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
     ],
+    "path---posts-cors-in-ruby-on-rails": [
+      "path---posts-cors-in-ruby-on-rails-59959c35f2416108a278.js",
+      "path---posts-cors-in-ruby-on-rails-59959c35f2416108a278.js.map"
+    ],
     "component---src-templates-post-template-jsx": [
       "component---src-templates-post-template-jsx-d7589e304c7c1cd853c9.js",
       "component---src-templates-post-template-jsx-d7589e304c7c1cd853c9.js.map"
@@ -65,8 +81,12 @@
       "component---src-pages-categories-jsx-2da18a892adca87ae12e.js.map"
     ],
     "path---index": [
-      "path---index-a5ac758b75d96d9d1c73.js",
-      "path---index-a5ac758b75d96d9d1c73.js.map"
+      "path---index-11ca284b681ea93504c3.js",
+      "path---index-11ca284b681ea93504c3.js.map"
+    ],
+    "path---tags-rails": [
+      "path---tags-rails-37ea7051d85c748bd621.js",
+      "path---tags-rails-37ea7051d85c748bd621.js.map"
     ],
     "commons": [
       "commons-5a4b1cc02814252034ab.js",
@@ -99,8 +119,8 @@
       "component---src-pages-index-jsx-64649fde84da96ead11c.js.map"
     ],
     "app": [
-      "app-7b4b67ceb2c4818d8cb1.js",
-      "app-7b4b67ceb2c4818d8cb1.js.map"
+      "app-7f64128dbeb90abc6090.js",
+      "app-7f64128dbeb90abc6090.js.map"
     ],
     "path---tags-web-development": [
       "path---tags-web-development-7941d4f705500d6f79a6.js",
@@ -121,6 +141,10 @@
     "path---about": [
       "path---about-29f0a8b84d9d7b31d9d3.js",
       "path---about-29f0a8b84d9d7b31d9d3.js.map"
+    ],
+    "path---tags-ruby": [
+      "path---tags-ruby-09b3b017b896d35ba2a7.js",
+      "path---tags-ruby-09b3b017b896d35ba2a7.js.map"
     ]
   }
 }

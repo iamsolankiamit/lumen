@@ -11,6 +11,12 @@
 <url> <loc>http://solankiamit.com/tags/database/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://solankiamit.com/tags/postgre-sql/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://solankiamit.com/categories/postgre-sql/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/posts/CORS-in-Ruby-On-Rails</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/tags/rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/tags/cors/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/tags/ruby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/tags/ruby-on-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://solankiamit.com/categories/ruby-on-rails/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://solankiamit.com/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://solankiamit.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>http://solankiamit.com/tags/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

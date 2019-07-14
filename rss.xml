@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Amit Solanki]]></title><description><![CDATA[I develop in and write about Javascript, Reason, and React]]></description><link>http://solankiamit.com</link><generator>RSS for Node</generator><lastBuildDate>Sat, 13 Jul 2019 18:38:44 GMT</lastBuildDate><item><title><![CDATA[How to setup PostgreSQL on MacOS]]></title><description><![CDATA[PostgreSQL setup reference]]></description><link>http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</link><guid isPermaLink="false">http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</guid><pubDate>Sun, 13 Jan 2019 23:35:19 GMT</pubDate><content:encoded>&lt;p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog by Amit Solanki]]></title><description><![CDATA[I develop in and write about Javascript, Reason, and React]]></description><link>http://solankiamit.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 14 Jul 2019 12:27:11 GMT</lastBuildDate><item><title><![CDATA[Handling CORS in Rails for client side apps]]></title><description><![CDATA[Handling CORS in Rails for JS apps using React, etc]]></description><link>http://solankiamit.com/posts/CORS-in-Ruby-On-Rails</link><guid isPermaLink="false">http://solankiamit.com/posts/CORS-in-Ruby-On-Rails</guid><pubDate>Sun, 20 Jan 2019 21:20:50 GMT</pubDate><content:encoded>&lt;p&gt;Building a client side app with React is a bliss, just like building backend with Ruby on Rails. In React if you make an api to call to backed you would get an error like so.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Response to preflight request doesn’t pass access control check: No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘http://localhost:4000&amp;#39; is therefore not allowed access. The response had HTTP status code 404. If an opaque response serves your needs, set the request’s mode to ‘no-cors’ to fetch the resource with CORS disabled.&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;CORS or Cross Origin Resource Sharing gives web server cross domain access control, which enables secure cross-domain data transfers. Browsers use CORS in an API container, such as &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest&quot;&gt;XMLHttpRequest&lt;/a&gt; (what &lt;a href=&quot;https://github.com/axios/axios&quot;&gt;Axios&lt;/a&gt; and &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API&quot;&gt;Fetch&lt;/a&gt; use under the hood), to mitigate the risks of cross-origin HTTP requests.&lt;/p&gt;
+&lt;p&gt;To fix this, we have 2 options.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set request mode to ‘no-cors’ to fetch the resource with CORS disabled, this will return an opaque response.&lt;/li&gt;
+&lt;li&gt;Add an ‘Access-Control-Allow-Origin’ header to rails server.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If we set ‘no-cors’ it returns the following Opaque response.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;Response &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+  bodyUsed&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+  headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Headers
+  ok&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+  redirected&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+  status&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  statusText&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+  type&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;opaque&quot;&lt;/span&gt;
+  url&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;There are a couple of things to note:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the &lt;code class=&quot;language-text&quot;&gt;status&lt;/code&gt; is “0” (and not a regular HTTP status code - like 200)&lt;/li&gt;
+&lt;li&gt;the &lt;code class=&quot;language-text&quot;&gt;statusText&lt;/code&gt; is empty&lt;/li&gt;
+&lt;li&gt;the &lt;code class=&quot;language-text&quot;&gt;headers&lt;/code&gt; object is also empty
+Basically, we can’t see anything in this &lt;code class=&quot;language-text&quot;&gt;Response&lt;/code&gt; object - and henceforth the name opaque. Opaque response or ‘no-cors’ mode can be used with &lt;code class=&quot;language-text&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;video&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;audio&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot;&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;object&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;&amp;lt;embed&amp;gt;&lt;/code&gt; and &lt;code class=&quot;language-text&quot;&gt;&amp;lt;iframe&amp;gt;&lt;/code&gt; elements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So it’s of no use to us, given that we need the data from our rails api. We need to add the &lt;code class=&quot;language-text&quot;&gt;Access-Control-Allow-Origin&lt;/code&gt; header to the rails server. We can use this wonderful gem &lt;a href=&quot;https://github.com/cyu/rack-cors&quot;&gt;rack-cors&lt;/a&gt;. We need to add the gem to our Gemfile.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;gem &lt;span class=&quot;token string&quot;&gt;&apos;rack-cors&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;And add the following config in &lt;code class=&quot;language-text&quot;&gt;config/application.rb&lt;/code&gt; file&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;YourApp&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Application&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Application&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;# ...&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# Rails 5&lt;/span&gt;
+
+    config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;middleware&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert_before &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;Rack&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;Cors&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+      allow &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+        origins &lt;span class=&quot;token string&quot;&gt;&apos;*&apos;&lt;/span&gt;
+        resource &lt;span class=&quot;token string&quot;&gt;&apos;*&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; methods&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token symbol&quot;&gt;:get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:options&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;# Rails 3/4&lt;/span&gt;
+
+    config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;middleware&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert_before &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Rack::Cors&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+      allow &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+        origins &lt;span class=&quot;token string&quot;&gt;&apos;*&apos;&lt;/span&gt;
+        resource &lt;span class=&quot;token string&quot;&gt;&apos;*&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:any&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; methods&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token symbol&quot;&gt;:get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token symbol&quot;&gt;:options&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;That’s about it, no more CORS issue. 🚀 We are good to go.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to setup PostgreSQL on MacOS]]></title><description><![CDATA[PostgreSQL setup reference]]></description><link>http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</link><guid isPermaLink="false">http://solankiamit.com/posts/How-to-setup-PostgreSQL-on-MacOS</guid><pubDate>Sun, 13 Jan 2019 23:35:19 GMT</pubDate><content:encoded>&lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/postgresql-907792a9fb57d6e99da3ebd881352848-cfd19.jpg&quot;
