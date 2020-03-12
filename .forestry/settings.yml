@@ -9,6 +9,8 @@ sections:
   label: pages
   create: all
   match: "**/*"
+- type: heading
+  label: setions
 - type: directory
   path: src/pages/articles
   label: blog posts
