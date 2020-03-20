@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    url: 'http://solankiamit.com',
+    siteUrl: 'http://solankiamit.com',
+    name: 'Amit Solanki',
     title: 'Blog by Amit Solanki',
-    subtitle: 'I develop in and write about Javascript, Reason, and React',
+    description: 'I develop in and write about Javascript, Reason, and React',
     copyright: '© All rights reserved.',
-    disqusShortname: '',
     menu: [
       {
         label: 'Articles',
@@ -19,142 +19,161 @@ module.exports = {
         path: '/contact/'
       }
     ],
-    author: {
-      name: 'Amit Solanki',
-      email: 'amit.fash@gmail.com',
-      telegram: 'iamsolankiamit',
-      twitter: 'iamsolankiamit',
-      github: 'iamsolankiamit',
-      rss: 'http://solankiamit.com/rss.xml'
-    }
+    // important to set the main text that appears in the hero
+    hero: {
+      heading: 'Perspectives on Javascript, React, ReasonML and Ruby.',
+      maxWidth: 652
+    },
+    social: [
+      {
+        name: 'twitter',
+        url: 'https://twitter.com/iamsolankiamit'
+      },
+      {
+        name: 'github',
+        url: 'https://github.com/iamsolankiamit'
+      }
+    ]
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                site_url: url
-                title
-                description: subtitle
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.site_url + edge.node.fields.slug,
-                  guid: site.siteMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }]
-                })),
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        date
-                        layout
-                        draft
-                        description
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml'
-          }
-        ]
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: { maxWidth: 960 }
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
-          },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants'
-        ]
-      }
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/src/pages`,
+    //     name: 'pages'
+    //   }
+    // },
+    // {
+    //   resolve: 'gatsby-plugin-feed',
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             site_url: url
+    //             title
+    //             description: subtitle
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMarkdownRemark } }) =>
+    //           allMarkdownRemark.edges.map(edge =>
+    //             Object.assign({}, edge.node.frontmatter, {
+    //               description: edge.node.frontmatter.description,
+    //               date: edge.node.frontmatter.date,
+    //               url: site.siteMetadata.site_url + edge.node.fields.slug,
+    //               guid: site.siteMetadata.site_url + edge.node.fields.slug,
+    //               custom_elements: [{ 'content:encoded': edge.node.html }]
+    //             })),
+    //         query: `
+    //           {
+    //             allMarkdownRemark(
+    //               limit: 1000,
+    //               sort: { order: DESC, fields: [frontmatter___date] },
+    //               filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
+    //             ) {
+    //               edges {
+    //                 node {
+    //                   html
+    //                   fields {
+    //                     slug
+    //                   }
+    //                   frontmatter {
+    //                     title
+    //                     date
+    //                     layout
+    //                     draft
+    //                     description
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         `,
+    //         output: '/rss.xml'
+    //       }
+    //     ]
+    //   }
+    // },
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: 'gatsby-remark-images',
+    //         options: { maxWidth: 960 }
+    //       },
+    //       {
+    //         resolve: 'gatsby-remark-responsive-iframe',
+    //         options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
+    //       },
+    //       'gatsby-remark-prismjs',
+    //       'gatsby-remark-copy-linked-files',
+    //       'gatsby-remark-smartypants'
+    //     ]
+    //   }
+    // },
+    // 'gatsby-transformer-sharp',
+    // 'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: { trackingId: 'UA-41949970-3' }
     },
+    // {
+    //   resolve: 'gatsby-plugin-google-fonts',
+    //   options: { fonts: ['roboto:400,400i,500,700'] }
+    // },
+    // {
+    //   resolve: 'gatsby-plugin-sitemap',
+    //   options: {
+    //     query: `
+    //         {
+    //           site {
+    //             siteMetadata {
+    //               url
+    //             }
+    //           }
+    //           allSitePage(
+    //             filter: {
+    //               path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
+    //             }
+    //           ) {
+    //             edges {
+    //               node {
+    //                 path
+    //               }
+    //             }
+    //           }
+    //       }`,
+    //     output: '/sitemap.xml',
+    //     serialize: ({ site, allSitePage }) =>
+    //       allSitePage.edges.map((edge) => {
+    //         return {
+    //           url: site.siteMetadata.url + edge.node.path,
+    //           changefreq: 'daily',
+    //           priority: 0.7
+    //         };
+    //       })
+    //   }
+    // },
+    // 'gatsby-plugin-offline',
+    // 'gatsby-plugin-catch-links',
+    // 'gatsby-plugin-react-helmet',
+    // 'gatsby-plugin-postcss-sass',
     {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: { fonts: ['roboto:400,400i,500,700'] }
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap',
+      resolve: '@narative/gatsby-theme-novela',
       options: {
-        query: `
-            {
-              site {
-                siteMetadata {
-                  url
-                }
-              }
-              allSitePage(
-                filter: {
-                  path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-                }
-              ) {
-                edges {
-                  node {
-                    path
-                  }
-                }
-              }
-          }`,
-        output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map((edge) => {
-            return {
-              url: site.siteMetadata.url + edge.node.path,
-              changefreq: 'daily',
-              priority: 0.7
-            };
-          })
+        contentPosts: 'content/posts',
+        contentAuthors: 'content/authors',
+        basePath: '/',
+        sources: {
+          local: true,
+          contentful: false
+        }
       }
-    },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss-sass'
+    }
   ]
 };

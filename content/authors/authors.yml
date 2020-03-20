@@ -1,0 +1,9 @@
+- name: Amit Solanki
+  bio: |
+    Hacking Javscript, React, ReasonML and Ruby
+  avatar: ./avatars/amit-solanki.jpeg
+  featured: true
+  social:
+    - url: https://github.com/iamsolankiamit
+    - url: https://twitter.com/iamsolankiamit
+    - url: https://instagram.com/iamsolankiamit

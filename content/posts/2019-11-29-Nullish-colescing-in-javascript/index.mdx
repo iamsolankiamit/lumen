@@ -1,0 +1,62 @@
+---
+title: Nullish Coalescing for JavaScript
+date: "2019-11-29T21:20:50.129Z"
+author: Amit Solanki
+hero: ./images/evan-dennis-i--IN3cvEjg-unsplash.jpg
+excerpt: Understanding the Null coalescing operator, an ES features which is moved to stage 3.
+tags: Javascript
+---
+
+Nullish Coalescing proposal has been moved to stage 3, i.e. soon it will be added to JS standards, let's see how it helps us.
+
+How many times have you checked whether a variable is `null` or not? Not `undefined`, `''` or `false` but just `null`, I would typically add an if condition `variable === null` just for that, and I've done this countless number of times.
+
+Consider the following code
+
+```js
+let counter;
+
+if(response.data === null) counter = 1;
+else counter = response.data;
+
+```
+
+What if we could do this easily without so much code to just check if it is `null` or not. Nullish coalescing just does that. Here's how it looks and works.
+
+```js
+
+let counter = response.data ?? 1;
+
+// now if data is 0 counter value is 0
+// if it is null or undefined we set it to 1;
+
+```
+So only if the value is `undefined` or `null` then the default value will be used.
+
+```js
+result = actualValue ?? defaultValue
+```
+
+Let's see what we would get when we use the logical OR operator.
+
+
+```js
+let counter = response.data || 1;
+
+// here even if the value is 0, that is the value is defined
+// we still get 1, which we don't want.
+
+```
+
+To recap "Nullish coalescing" is essentially
+
+```js
+  a ?? b
+  a !== undefined && a !== null ? a : b
+```
+
+Current status and how to use
+---
+
+You can check the [ECMAScript Next compatibility table](http://kangax.github.io/compat-table/esnext/#test-nullish_coalescing_operator_(??)) to find out where the ?? operator is supported.
+Babel has the plugin `@babel/plugin-proposal-nullish-coalescing-operator`

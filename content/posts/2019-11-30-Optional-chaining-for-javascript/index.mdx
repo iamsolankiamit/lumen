@@ -1,0 +1,186 @@
+---
+title: Optional Chaining for Javascript - ES proposal
+date: '2019-11-30T21:20:50.129Z'
+author: Amit Solanki
+hero: ./images/roberto-carlos-roman-uicqU6-6pEA-unsplash.jpg
+excerpt: Understanding the Optional chaining operator, an ES features which is moved to stage 3.
+tags: Javascript
+---
+
+We saw [nullish coalescing yesterday](https://solankiamit.com/nullish-coalescing-for-javascript), today let's see optional chaining another awesome ESnext feature. It is so awesome not to talk about.
+
+Just like nullish coalescing, optional chaining helps us handle `undefined` and `null` cases. let's consider the following example
+
+```js
+let company = {
+  name: 'Github',
+  revenue: 2000,
+  users: [
+    { name: 'John', handle: '@john' },
+    { name: 'doe', handle: '@doe' },
+  ],
+  getUserNames() {
+    return users.map(user => user.name)
+  },
+}
+```
+
+to access the values of this object, if they or the object can be `undefined` or `null` we would normally do the following.
+
+```js
+const companyName =
+  company !== undefined && company !== null ? company.name : undefined
+```
+
+In contrast with optional chaining we can do
+
+```js
+const companyName = company?.name
+```
+
+The Syntax
+
+```js
+obj?.prop // optional static property access
+obj?.[expr] // optional dynamic property access
+func?.(...args) // optional function or method call
+```
+
+Let's see how we can handle multiple ways of accessing properties of an object.
+
+1. Static
+2. Dynamic
+3. Function Call
+4. Dom access
+
+### Static Properties
+
+```js
+let company = {
+  name: 'Github',
+  revenue: 2000,
+  users: [
+    { name: 'John', handle: '@john' },
+    { name: 'doe', handle: '@doe' },
+  ],
+  getUserNames() {
+    return users.map(user => user.name)
+  },
+}
+
+// with optional Chaining
+const companyName = company?.name
+
+// without optional Chaining
+const companyName =
+  company !== undefined && company !== null ? company.name : undefined
+```
+
+### Dynamic Properties
+
+```js
+let company = {
+  name: 'Github',
+  revenue: 2000,
+  users: [
+    { name: 'John', handle: '@john' },
+    { name: 'doe', handle: '@doe' },
+  ],
+  getUserNames() {
+    return users.map(user => user.name)
+  },
+}
+
+// with optional Chaining
+const companyName = company?.['name']
+
+// without optional Chaining
+const companyName =
+  company !== undefined && company !== null ? company['name'] : undefined
+```
+
+### Function calls
+
+```js
+let company = {
+  name: 'Github',
+  revenue: 2000,
+  users: [
+    { name: 'John', handle: '@john' },
+    { name: 'doe', handle: '@doe' },
+  ],
+  getUserNames() {
+    return users.map(user => user.name)
+  },
+}
+
+// with optional Chaining
+company.getUserNames?.()
+
+// without optional Chaining
+const companyName =
+  company !== undefined &&
+  company !== null &&
+  Object.prototype.hasOwnProperty('getUserNames') &&
+  typeof company.getUserNames === 'function'
+    ? company['name']
+    : undefined
+```
+
+### Dom access
+
+Optional Chaining supports DOM and its methods, so we can do stuff like this
+
+```js
+const val = document.querySelector('input#name')?.value
+```
+
+Optional Chaining will always return `undefined` if the expression fails.
+
+```js
+const value = company?.name
+
+// 'value' will be undefined if company is undefined.
+```
+
+So we can pair optional chaining with nullish coalescing to handle those cases.
+
+```js
+const value = company?.name ?? 'default name'
+
+// 'value' will be 'default name' if either the company or name is undefined or null.
+```
+
+To wrap it up with a complete example
+
+```js
+let company = {
+  name: 'Github',
+  revenue: 2000,
+  users: [
+    { name: 'John', handle: '@john' },
+    { name: 'doe', handle: '@doe' },
+  ],
+  getUserNames() {
+    return users.map(user => user.name)
+  },
+}
+
+// Static access with default value
+const value = company?.name ?? 'default name'
+
+// Dynamic access with default value
+const companyName = company?.['name'] ?? 'default value'
+
+// Function call
+company.getUserNames?.()
+```
+
+Optional chaining and nullish coalescing brings a lot of benefits, by reducing the complexity and making code readable. Give them a try and let me know your opinions in comments below.
+
+You can use the following babel plugins to use them today.
+
+- [@babel/plugin-proposal-optional-chaining](https://babeljs.io/docs/en/babel-plugin-proposal-optional-chaining)
+- [@babel/plugin-proposal-nullish-coalescing-operator](https://babeljs.io/docs/en/babel-plugin-proposal-nullish-coalescing-operator)
+
+Follow me on [twitter](https://twitter.com/iamsolankiamit)
